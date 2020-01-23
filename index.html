@@ -1,55 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-
-<title>Jordan's quiz</title>
-<link href ="style.css" rel ="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-<script src = "main.js"></script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Code Quiz</title>
 </head>
 
-
 <body>
-<h1>This is a quiz</h1>
-
-
-
-<form id = "quiz" name = "quiz">
-
-
-<p class = "questions">What is null in JavaScript?</p>
-<input id = "textbox" type = "text" name = "question1">
-
-<p class = "questions">Variable in JavaScript declared with which keyword?</p>
-<input type = "radio" id = "mc" name = "question2" value = "String"> String<br>
-<input type = "radio" id = "mc" name = "question2" value = "Var"> Var<br>
-
-<p class = "questions">A function can be assigned to a variable in JavaScript?</p>
-
-<input type = "radio" id = "mc" name = "question3" value = "Booleans"> True<br>
-<input type = "radio" id = "mc" name = "question3" value = "False"> False<br>
-
-
-<input id = "button" type = "button" value = "I'm finished!" onclick = "check();">
-
-
-</form>
-
-<body>
-        <div class="drop-shadow">
-                <div class=></div>
-                  <span></span>
-                  
-    <div>This quiz will end in <span id="time">01:00</span> minute!</div>
+    <div class="quizContainer container-fluid well well-lg">
+        <div class="container card">
+            <div id="quiz" class="text-center">
+                <div class="card-header">
+                    <h2>Coding Quiz</h2>
+                </div>
+                <div class="card-body">
+                    <p id="instructions">Timed quiz to see how smart you really are!</p>
+                    <h4 class="iTime">Time Remaining: 0</h4>
+                    <hr>
+                    <button type="button" class="btnColor btn btn-secondary" id="start">Start Quiz</button>
+                    <button type="button" class="btn btn-secondary" id="viewScores" onclick="viewAllScores()">View High
+                        Scores</button>
+                    <main class="questions-rendered"></main>
+                    <p id="choice-response"></p>
+                </div>
+                <div id="initialsDiv" class="text-center" style="display:none">
+                    Enter Initials: <input type="text" onfocus="this.value=''" id="myInitials" value="">
+                    <button type="button" class="btnColor btn btn-secondary" id="enterInitials"
+                        onclick="getInitials()">Submit</button>
+                </div>
+                <div id="scoresDiv" class="text-center" style="display:none">
+                    <button type="button" class="btn btn-info" id="goBack" onclick="startOver()">Go Back</button>
+                    <button type="button" class="btn btn-info" id="clearScores" onclick="clearScores()">Clear High
+                        Scores</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+<script src="questions.js"></script>
+<script src="quiz.js"></script>
 
-
-<div id = "after_submit">
-<p id = "number_correct"></p>
-<p id = "message"></p>
-<img id = "picture">
-</div>
 </html>
-
-</body>
